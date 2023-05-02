@@ -1,24 +1,24 @@
 # Tacotron2
 
-The Tacotron2 network is used as the main synthesis engine in the SOVA-TTS project. We took its [implementation from NVIDIA](https://github.com/NVIDIA/tacotron2), added various improvements that might be found in articles, and made the code more user-friendly. 
+Tacotron2 сеть используется в качестве основного синтезирующего движка в проекте SOVA-TTS. Мы взяли его [реализацию от NVIDIA](https://github.com/NVIDIA/tacotron2), добавили различные улучшения, которые могут быть найдены в статьях, и сделали код более удобным для пользователя.
 
-Key differences:  
-1. [GST](https://arxiv.org/abs/1803.09017) module is added;
-2. Mutual Information Estimator is added (based on the following [article](https://arxiv.org/pdf/1909.01145.pdf) and [repo](https://github.com/bfs18/tacotron2));
-3. Added the possibility to include attention loss in the train process (using diagonal or [prealigned](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8703406) guidance);
-4. Some work has been done to improve the usability of the code;
-5. Other minor changes and additions.
+Основные отличия:
+1. Добавлен модуль [GST](https://arxiv.org/abs/1803.09017);
+2. Добавлен Mutual Information Estimator (на основе [статьи](https://arxiv.org/pdf/1909.01145.pdf) и [репозитория](https://github.com/bfs18/tacotron2));
+3. Добавлена возможность включения потерь внимания в процесс обучения (с использованием диагонального или [предварительно выровненного](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=8703406) направления);
+4. Некоторая работа была проведена для улучшения удобства использования кода;
+5. Другие незначительные изменения и дополнения.
 
-# How to train a new model
+# Как обучить новую модель
 
-First of all you need to install all dependencies (which can be found in the reuqirements.txt) and convert the dataset to the LJ Speech format, where each line contains relative path to the audio file and its text, separated by "|" sign, e.g.:
+Прежде всего, вам нужно установить все зависимости (которые можно найти в requirements.txt) и преобразовать набор данных в формат LJ Speech, где каждая строка содержит относительный путь к аудиофайлу и его текст, разделенные знаком "|", например:
 
 > wavs/000000.wav|С трев+ожным ч+увством бер+усь я з+а пер+о.
 
-Then divide it into two files: the training list (90% of the data) and the validation list (10% of the data).
+Затем разделите его на два файла: список обучения (90% данных) и список проверки (10% данных).
 
-After that configure the config file as needed ([here](https://github.com/sovaai/sova-tts-engine/blob/master/data/README.md) you can find an explanation of the main fields of the config file), or just use the default one, filling in the values of parameters `output_dir` (where to save checkpoints), `training_files` (path to the training list), `validation_files` (path to the validation list) and `audios_path` (path to the audio folder, so that together with the relative path to the audio, the full path is obtained).
+После этого настройте файл конфигурации по необходимости ([здесь](https://github.com/sovaai/sova-tts-engine/blob/master/data/README.md) можно найти объяснение основных полей файла конфигурации) или просто используйте значение параметров по умолчанию, заполнив значения параметров `output_dir` (куда сохранять контрольные точки), `training_files` (путь к списку обучения), `validation_files` (путь к списку проверки) и `audios_path` (путь к папке с аудиофайлами, так что вместе с относительным путем к аудиофайлу получается полный путь).
 
-When everything is ready, launch the training process: 
-* in case if you changed hparams.yaml inside the 'data' folder: `python train.py`
-* in case if you have some other config file: `python train.py -p path/to/hparams.yaml`
+Когда все готово, запустите процесс обучения:
+* если вы изменили hparams.yaml внутри папки 'data': `python train.py`
+* если у вас есть какой-то другой файл конфигурации: `python train.py -p path/to/hparams.yaml`
