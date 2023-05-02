@@ -1,5 +1,6 @@
+## WaveGlow: генеративная сеть на основе потоков для синтеза речи
 
-## WaveGlow: a Flow-based Generative Network for Speech Synthesis
+Здесь вы можете найти модифицированный код [Waveglow](https://github.com/NVIDIA/waveglow) - генеративной сети, способной создавать высококачественную речь из мел-спектрограмм.
+## Запуск в режиме inference 
+Запустить файл inference.py
 
-Here you can find modified code of the [Waveglow](https://github.com/NVIDIA/waveglow) - a flow-based network capable of
-generating high quality speech from mel-spectrograms.
