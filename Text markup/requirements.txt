@@ -1,0 +1,6 @@
+pydub >= 0.25.1
+pytorch-cuda == 11.7
+conda == 22.11.1              
+ffmpeg == 4.3.1               
+python_abi == 3.9 
+pandas >= 1.0.0
