@@ -30,6 +30,9 @@ Text Markup - в данном разделе находится полноцен
 
 ## Контакты
 
-[iksmolenchuk@miem.hse.ru]- researcher
+iksmolenchuk@miem.hse.ru- researcher
 
-[manizhegorodov@miem.hse.ru]- researcher
+manizhegorodov@miem.hse.ru- researcher
+
+mpselin@edu.hse.ru - project manager/ tester
+
