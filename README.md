@@ -30,6 +30,6 @@ Text Markup - в данном разделе находится полноцен
 
 ## Контакты
 
-[iksmolenchuk@miem.hse.ru](https://cabinet.miem.hse.ru/#/project/371/team) - researcher
+[iksmolenchuk@miem.hse.ru]- researcher
 
-[manizhegorodov@miem.hse.ru](https://cabinet.miem.hse.ru/#/project/371/team) - researcher
+[manizhegorodov@miem.hse.ru]- researcher
